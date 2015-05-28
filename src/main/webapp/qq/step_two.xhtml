@@ -47,7 +47,7 @@ table.ui-datagrid-data {
 			</p>
 
 			<h:form>
-				<p:dataGrid columns="1"
+				<p:dataGrid columns="1" id="btnList"
 					value="#{quizAppMbean.quizzChosen.listQuestions.get(1).answers}"
 					var="option" rowIndexVar="rowIndex">
 
@@ -62,9 +62,19 @@ table.ui-datagrid-data {
 
 
 				</p:dataGrid>
-				<p:dialog showEffect="bounce" widgetVar="dlg1" header="Correct"
-					severity="alert">
+				
+		<!-- 
+**
+*Show on response TRUE
+**
+ -->
+				<div id="divTrue" style="display:none" >
 
+					<p:panelGrid columns="2">
+						<h1 class="jqm-rep">Correct</h1>
+						<h:graphicImage library="images" name="true.png"
+							styleClass="imgTrue"></h:graphicImage>
+					</p:panelGrid>
 					<div>
 
 						<p:panelGrid columns="2" styleClass="ui-responsive, jqm_corner"
@@ -79,30 +89,37 @@ table.ui-datagrid-data {
 								value="#{quizAppMbean.quizzChosen.getListQuestions().get(1).getAnswers().get(quizAppMbean.quizzChosen.listQuestions.get(1).response)}" />
 
 							<h:outputText value="#{messages.label_clarification}" styleClass="popUpStyle" />
-							<h:outputText value="#{quizAppMbean.quizzChosen.getListQuestions().get(1).getExplanation()}" id="ClarificationTrue" />
+							
+							<h:outputText value="#{quizAppMbean.quizzChosen.getListQuestions().get(1).getExplanation()}" />
+
 						</p:panelGrid>
 
 					</div>
-
-
+				
 					<div class="btnNextQQ">
 						<p:commandButton value="#{messages.label_next}"
 							icon="ui-icon-arrow-r" iconPos="right"
 							action="#{quizAppMbean.moveToNextQuestion}" />
 					</div>
+				</div>
+<!-- 
+**
+*Show on response fALSE
+**
+ -->
+				<div id="divFalse" style="display:none" >
 
-				</p:dialog>
-
-
-				<p:dialog showEffect="bounce" widgetVar="dlg2" header="Incorrect"
-					severity="alert">
+					<p:panelGrid columns="2">
+						<h1 class="jqm-rep">Incorrect</h1>
+						<h:graphicImage library="images" name="false.png"
+							styleClass="imgFalse"></h:graphicImage>
+					</p:panelGrid>
 
 					<div>
 
 						<p:panelGrid columns="2" styleClass="ui-responsive, jqm_corner"
 							style="margin-top:2%;background-color: lightgrey">
-							<h:outputText value="#{messages.label_answer_yours} "
-								styleClass="popUpStyle" />
+							<h:outputText value="#{messages.label_answer_yours} " styleClass="popUpStyle" />
 							<h:outputText id="qqChoice" value="" />
 
 							<h:outputText value="#{messages.label_answer_true} "
@@ -111,22 +128,19 @@ table.ui-datagrid-data {
 								value="#{quizAppMbean.quizzChosen.getListQuestions().get(1).getAnswers().get(quizAppMbean.quizzChosen.listQuestions.get(1).response)}" />
 
 							<h:outputText value="#{messages.label_clarification}" styleClass="popUpStyle" />
-							<h:outputText value="#{quizAppMbean.quizzChosen.getListQuestions().get(1).getExplanation()}" id="ClarificationFalse" />
-							
+							<h:outputText value="#{quizAppMbean.quizzChosen.getListQuestions().get(1).getExplanation()}"  />		
 						</p:panelGrid>
 
 					</div>
-
-
 					<div class="btnNextQQ">
 						<p:commandButton value="#{messages.label_next}"
 							icon="ui-icon-arrow-r" iconPos="right"
 							action="#{quizAppMbean.moveToNextQuestion}" />
 					</div>
-				</p:dialog>
-
-
+				</div>
+				
 			</h:form>
+
 			<script>
 			onload = function() { 
 				if (Cookies.get('dlgIdStep2') === null
@@ -135,6 +149,7 @@ table.ui-datagrid-data {
 						|| Cookies.get('dlgIdStep2') === undefined) {
 					//no cookie
 				} else {
+					document.getElementById('j_idt6:j_idt15:btnList').style.display = 'none';
 					var el = document.getElementById(Cookies.get('dlgIdStep2'));
 					setTimeout(function() {
 						$(el).click();
@@ -150,6 +165,8 @@ table.ui-datagrid-data {
 					});
 					var value = document.getElementById(this.id).textContent;
 					document.getElementById('j_idt6:j_idt15:qqChoiceT').innerHTML = value;
+					document.getElementById('divTrue').style.display = 'block';
+					document.getElementById('j_idt6:j_idt15:btnList').style.display = 'none';
 
 				});
 				$(document).on("click", '.btnResponsefalse', function() {
@@ -160,11 +177,13 @@ table.ui-datagrid-data {
 					});
 					var value = document.getElementById(this.id).textContent;
 					document.getElementById('j_idt6:j_idt15:qqChoice').innerHTML = value;
-					
+					document.getElementById('divFalse').style.display = 'block';
+					document.getElementById('j_idt6:j_idt15:btnList').style.display = 'none';
+
 				});
 			</script>
 
-
+			
 		</pm:content>
 
 	</ui:define>

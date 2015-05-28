@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/mobile.xhtml">
+	
+<ui:define name="head">
+ 	<pm:header title="Puzzle">
+            </pm:header> 
+<style>
+th {
+	border-bottom: 1px solid lightgrey;
+	border-left: 1px solid lightgrey;
+	border-right: 1px solid lightgrey;
+	border-top: 1px solid lightgrey;
+}
+
+tr:nth-child(even) {
+	background: #e9e9e9;
+}
+
+td {
+	border-bottom: 1px solid lightgrey;
+	border-left: 1px solid lightgrey;
+	border-right: 1px solid lightgrey;
+}
+
+.ui-btn {
+	margin: 0 !important;
+}
+
+.main-blocks {
+	display: table-row;
+}
+
+.child-block {
+	display: table-cell;
+}
+
+#main-container {
+	position: relative;
+}
+
+#main-container .child-block {
+	float: left;
+	width: 100%;
+	height: 100;
+	margin: 10px;
+	/*
+	-webkit-background-size: contain;
+	-moz-background-size: contain;
+	-o-background-size: contain;
+	background-size: contain;
+	background: url('#{request.contextPath}/resources/images/bgtest.jpg');
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-attachment: fixed;
+	*/
+}
+
+#main-container {
+	display: table;
+	width: 100%;
+	margin: 0 auto;
+}
+</style>
+
+
+</ui:define>
+
+<ui:define name="content">
+
+	<pm:content styleClass="jqm-content" >
+		<div id="main-container" style="margin-top:2%;background-color: lightgrey">
+		
+			<p:panelGrid columns="2" styleClass="main-blocks" >
+			    <p:button value="A" type="button" styleClass="child-block bg1#{quizAppMbean.step1Done}" outcome="/qq/step_one.xhtml" id="bg1" disabled="#{quizAppMbean.step1Done}" />
+			    <p:button value="A" type="button" styleClass="child-block bg2#{quizAppMbean.step2Done}" outcome="/qq/step_two.xhtml" id="bg2" disabled="#{quizAppMbean.step2Done}" />
+			</p:panelGrid>
+			
+			<p:panelGrid columns="3" styleClass="main-blocks" >
+			    <p:button value="A" type="button" styleClass="child-block bg3#{quizAppMbean.step3Done}" outcome="/qq/step_three.xhtml" id="bg3" disabled="#{quizAppMbean.step3Done}" />
+			    <p:button value="A" type="button" styleClass="child-block bg4#{quizAppMbean.step4Done}" outcome="/qq/step_four.xhtml" id="bg4" disabled="#{quizAppMbean.step4Done}" />
+			    <p:button value="A" type="button" styleClass="child-block bg5#{quizAppMbean.step5Done}" outcome="/qq/step_five.xhtml" id="bg5" disabled="#{quizAppMbean.step5Done}" />
+			</p:panelGrid>
+			
+			<p:panelGrid columns="1" styleClass="main-blocks" >
+			    <p:button value="A" type="button" styleClass="child-block bg6#{quizAppMbean.step6Done}" outcome="/qq/step_six.xhtml" id="bg6" disabled="#{quizAppMbean.step6Done}" />
+			</p:panelGrid>
+			
+			<p:panelGrid columns="1" styleClass="main-blocks" >
+			    <p:button value="A" type="button" styleClass="child-block bg7#{quizAppMbean.step7Done}" outcome="/qq/step_seven.xhtml" id="bg7" disabled="#{quizAppMbean.step7Done}" />
+			</p:panelGrid>
+			
+			<p:panelGrid columns="3" styleClass="main-blocks" >
+			    <p:button value="A" type="button" styleClass="child-block bg8#{quizAppMbean.step8Done}" outcome="/qq/step_height.xhtml" id="bg8" disabled="#{quizAppMbean.step8Done}" />
+			    <p:button value="A" type="button" styleClass="child-block bg9#{quizAppMbean.step9Done}" outcome="/qq/step_nine.xhtml" id="bg9" disabled="#{quizAppMbean.step9Done}" />
+			    <p:button value="A" type="button" styleClass="child-block bg10#{quizAppMbean.step10Done}" outcome="/qq/step_ten.xhtml" id="bg10" disabled="#{quizAppMbean.step10Done}" />
+			</p:panelGrid>
+					
+		</div>
+				
+	</pm:content>
+	
+</ui:define>
+
+</ui:composition>
+
+  
+        

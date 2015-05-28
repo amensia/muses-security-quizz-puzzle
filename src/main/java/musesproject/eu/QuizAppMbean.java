@@ -23,9 +23,6 @@ import org.primefaces.model.chart.HorizontalBarChartModel;
 import org.primefaces.model.chart.PieChartModel;
 
 
-
-
-
 public class QuizAppMbean {
 	
 	private  List<Question> sampleQuestions = new ArrayList<Question>();
@@ -67,6 +64,8 @@ public class QuizAppMbean {
 	private int wrongAnswer = 0;
 	 
 	private int correctAnswer = 0;
+	
+	private int counterStep = 0;
 	
 	private boolean  step1Done = false;
 	
@@ -453,6 +452,8 @@ public class QuizAppMbean {
 		step8Done = false;
 		step9Done = false;
 		step10Done = false;
+		counterStep = 0;
+		
 		
 	}
 	public String moveToNextQuestion() {
@@ -464,10 +465,8 @@ public class QuizAppMbean {
 		System.out.println("step: "+step);
 		
 		//results.setDescription(quizzChosen.getDescription());
-		
 		/*
 		totalfinalCorrAnswer = 0;
-		
 		totalFinalWrongAnswer = 0;
 		*/
 		FacesContext facesContext = FacesContext.getCurrentInstance();
@@ -487,13 +486,21 @@ public class QuizAppMbean {
 				responseslist.add(response);
 				if (response == quizzChosen.getListQuestions().get(0).getResponse()) {
 					totalCorrAnswer++;
+					
 				}
 	
 				step1Done = true;
+				counterStep ++;
+				System.out.println("Counter: "+counterStep);
+				
+				if(counterStep == 10){
+					showResult();	
+					return "result";
+				}
 	
-				return "step2";
+				return "puzzle";
 			}else{
-				return "step2";
+				return "puzzle";
 			}
 		}
 
@@ -510,11 +517,19 @@ public class QuizAppMbean {
 				System.out.println("bool2: "+step2Done);
 	
 				step2Done = true;
-	
-				return "step3";
+				counterStep ++;
+				
+				System.out.println("Counter: "+counterStep);
+				
+				if(counterStep == 10){
+					showResult();	
+					return "result";
+				}
+				
+				return "puzzle";
 			}else{
 			    
-		        return "step3";
+		        return "puzzle";
 
 			}
 		}
@@ -533,10 +548,17 @@ public class QuizAppMbean {
 				System.out.println("bool3: "+step3Done );
 	
 				step3Done = true;
+				counterStep ++;
+				System.out.println("Counter: "+counterStep);
+				
+				if(counterStep == 10){
+					showResult();	
+					return "result";
+				}
 	
-				return "step4";
+				return "puzzle";
 			}else{
-				return "step4";
+				return "puzzle";
 
 			}
 		}
@@ -553,10 +575,17 @@ public class QuizAppMbean {
 				}
 				System.out.println("bool4: "+step4Done );
 				step4Done = true;
-	
-				return "step5";
+				counterStep ++;
+				System.out.println("Counter: "+counterStep);
+				
+				if(counterStep == 10){
+					showResult();	
+					return "result";
+				}
+				
+				return "puzzle";
 			}else{
-				return "step5";
+				return "puzzle";
 
 			}
 		}
@@ -571,10 +600,17 @@ public class QuizAppMbean {
 					totalCorrAnswer++;
 				}
 				step5Done = true;
-	
-				return "step6";
+				counterStep ++;
+				System.out.println("Counter: "+counterStep);
+				
+				if(counterStep == 10){
+					showResult();	
+					return "result";
+				}
+				
+				return "puzzle";
 			}else{
-				return "step6";
+				return "puzzle";
 
 			}
 		}
@@ -589,10 +625,17 @@ public class QuizAppMbean {
 					totalCorrAnswer++;
 				}
 				step6Done = true;
+				counterStep ++;
+				System.out.println("Counter: "+counterStep);
 	
-				return "step7";
+				if(counterStep == 10){
+					showResult();	
+					return "result";
+				}
+				
+				return "puzzle";
 			}else{
-				return "step7";
+				return "puzzle";
 
 			}
 		}
@@ -607,11 +650,16 @@ public class QuizAppMbean {
 					totalCorrAnswer++;
 				}
 				step7Done = true;
-				
+				counterStep ++;
+				System.out.println("Counter: "+counterStep);
+				if(counterStep == 10){
+					showResult();	
+					return "result";
+				}
 	
-				return "step8";
+				return "puzzle";
 			}else{
-				return "step8";
+				return "puzzle";
 
 			}
 		}
@@ -626,10 +674,17 @@ public class QuizAppMbean {
 				totalCorrAnswer++;
 			}
 			step8Done = true;
+			counterStep ++;
+			System.out.println("Counter: "+counterStep);
 
-			return "step9";
+			if(counterStep == 10){
+				showResult();	
+				return "result";
+			}
+			
+			return "puzzle";
 			}else{
-				return "step9";
+				return "puzzle";
 			}
 		}
 		if(step.equalsIgnoreCase("9")){
@@ -643,10 +698,17 @@ public class QuizAppMbean {
 				totalCorrAnswer++;
 			}
 			step9Done = true;
+			counterStep ++;
+			System.out.println("Counter: "+counterStep);
 
-			return "step10";
+			if(counterStep == 10){
+				showResult();	
+				return "result";
+			}
+			
+			return "puzzle";
 			}else{
-				return "step10";
+				return "puzzle";
 			}
 		}
 		if(step.equalsIgnoreCase("10")){
@@ -661,105 +723,110 @@ public class QuizAppMbean {
 					totalCorrAnswer++;
 				}
 				step10Done = true;
+				counterStep ++;
+				System.out.println("Counter: "+counterStep);
+				if(counterStep == 10){
+					showResult();	
+					return "result";
+				}
 				
-				//results.setQuestions(questionslist);
-				results.setResponses(responseslist);
-				
-				totalWrongAnswer = quizzChosen.getListQuestions().size() - totalCorrAnswer;
-				
-				
-				totalfinalCorrAnswer = totalCorrAnswer;
-				
-				totalFinalWrongAnswer = totalWrongAnswer;
-				
-				
-				totalCorrAnswer = 0;
-				
-				totalWrongAnswer = 0; 
-				
-				//quizzChosen.persist();
-				
-				List<Quizz> set = new ArrayList<Quizz>();
-				 	 	   
-		        if(employee.getMyQuizzes()!=null){
-	 	 	    	
-	 	 	    	set = employee.getMyQuizzes();
-	 	 	    	
-	
-	 	 	    }
-		
-		
-	 	        //list.add(quizzChosen1);
-				set.add(quizzChosen);
-				employee.setMyQuizzes(set);
-				
-				//employee.merge();
-				
-				mylists = new ArrayList<Quizz>(employee.getMyQuizzes());	
-			
-				
-				
-				
-				//results.persist();
-				//quizzChosen.persist();
-				//quizzChosen.setResultQuiz(resultQuiz);
-				
-				results.setQuizz(quizzChosen);
-				results.setEmployee(employee);
-				results.setCorrectAnswers(totalfinalCorrAnswer);
-				results.setWrongAnswers(totalFinalWrongAnswer);
-				results.setResponses(responseslist);
-				QuizzResult results1 = results;
-				
-				
-				
-				Date now = new Date();
-				results1.setDate(now);
-				results1.persist();
-				List<QuizzResult> resultQuiz = new ArrayList<QuizzResult>();
-				if(employee.getMyQuizResults()!=null){
-	 	 	    	
-					resultQuiz = employee.getMyQuizResults();
-	 	 	    	
-	 	 	    }
-				resultQuiz.add(results1);
-	
-				employee.setMyQuizResults(resultQuiz);
-				employee.merge();
-				//employee.merge();
-	
-				results = new QuizzResult();
-				//quizzChosen = new Quizz();
-				responseslist = new ArrayList<Integer>();
-				
-				averageCorrAnswer = averageCorrectAnswers();
-				averageWrongAnswer = averageWrongAnswers();
-				
-				
-				step10Done = true;
-	
-				return "result";
+				return "puzzle";
 			}else{
-				return "result";
+				return "puzzle";
 			}
 		}
 		
-		if(step.equalsIgnoreCase("final")){
-			
-			employee.getMyQuizzes().get(0).getDescription();
-			
-			
-			
-		}
-		
-		
-		
-		return " ";
+		return "";
 	
 	}
 
 	
+	public String showResult(){
+		if(counterStep == 10){
+		
+		System.out.println("counter at 10: "+counterStep);
+		
+		//results.setQuestions(questionslist);
+		results.setResponses(responseslist);
+		
+		totalWrongAnswer = quizzChosen.getListQuestions().size() - totalCorrAnswer;
+		
+		
+		totalfinalCorrAnswer = totalCorrAnswer;
+		
+		totalFinalWrongAnswer = totalWrongAnswer;
+		
+		
+		totalCorrAnswer = 0;
+		
+		totalWrongAnswer = 0; 
+		
+		//quizzChosen.persist();
+		
+		List<Quizz> set = new ArrayList<Quizz>();
+		 	 	   
+        if(employee.getMyQuizzes()!=null){
+	 	    	
+	 	    	set = employee.getMyQuizzes();
+	 	    	
 
+	 	    }
+
+
+	        //list.add(quizzChosen1);
+		set.add(quizzChosen);
+		employee.setMyQuizzes(set);
+		
+		//employee.merge();
+		
+		mylists = new ArrayList<Quizz>(employee.getMyQuizzes());	
+	
+		
+		
+		
+		//results.persist();
+		//quizzChosen.persist();
+		//quizzChosen.setResultQuiz(resultQuiz);
+		
+		results.setQuizz(quizzChosen);
+		results.setEmployee(employee);
+		results.setCorrectAnswers(totalfinalCorrAnswer);
+		results.setWrongAnswers(totalFinalWrongAnswer);
+		results.setResponses(responseslist);
+		QuizzResult results1 = results;
+		
+		
+		
+		Date now = new Date();
+		results1.setDate(now);
+		results1.persist();
+		List<QuizzResult> resultQuiz = new ArrayList<QuizzResult>();
+		if(employee.getMyQuizResults()!=null){
+	 	    	
+			resultQuiz = employee.getMyQuizResults();
+	 	    	
+	 	    }
+		resultQuiz.add(results1);
+
+		employee.setMyQuizResults(resultQuiz);
+		employee.merge();
+		//employee.merge();
+
+		results = new QuizzResult();
+		//quizzChosen = new Quizz();
+		responseslist = new ArrayList<Integer>();
+		
+		averageCorrAnswer = averageCorrectAnswers();
+		averageWrongAnswer = averageWrongAnswers();
+		
+		
+		step10Done = true;
+
+			return "result";
+		}else{
+			return "result";
+		}
+	}
 	
 	
 	
@@ -768,6 +835,8 @@ public class QuizAppMbean {
 		sampleQuestions.clear();
 
 		totalCorrAnswer = 0;
+		counterStep = 0;
+		
 		
 	}
 	

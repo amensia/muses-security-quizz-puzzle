@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14211429627510" configfile="/muses-security-quizz/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="*" id="pf14295314265420" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14295314265441" path="*"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/main.xhtml" id="pf14295314265442" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf14295314265441 pf14295314265443" path="/pages/main.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_three.xhtml" id="pf14295314265444" referenceLink="//@navigationRule.9/@navigationCase.0/@toViewId|" outlinks="pf14295314265445 pf14295314265443" inlinks="pf14295314265446" path="/qq/step_three.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_four.xhtml" id="pf14295314265447" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14295314265448" inlinks="pf14295314265445" path="/qq/step_four.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_five.xhtml" id="pf14295314265449" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf142953142654410" inlinks="pf14295314265448" path="/qq/step_five.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_six.xhtml" id="pf142953142654511" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf142953142654512" inlinks="pf142953142654410" path="/qq/step_six.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_seven.xhtml" id="pf142953142654513" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf142953142654514" inlinks="pf142953142654512" path="/qq/step_seven.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_height.xhtml" id="pf142953142654515" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf142953142654516" inlinks="pf142953142654514" path="/qq/step_height.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_nine.xhtml" id="pf142953142654517" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf142953142654518" inlinks="pf142953142654516" path="/qq/step_nine.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_ten.xhtml" id="pf142953142654519" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf142953142654520" inlinks="pf142953142654518" path="/qq/step_ten.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/qqResult.xhtml" id="pf142953142654521" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" inlinks="pf142953142654520" path="/qq/qqResult.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_two.xhtml" id="pf142953142654522" referenceLink="//@navigationRule.10/@navigationCase.0/@toViewId|" outlinks="pf14295314265446" inlinks="pf142953142654523" path="/qq/step_two.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_one.xhtml" id="pf142953142654524" referenceLink="//@navigationRule.11/@navigationCase.0/@toViewId|" outlinks="pf142953142654523" inlinks="pf142953142654525" path="/qq/step_one.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/selectQuizzActivity.xhtml" id="pf142953142654526" referenceLink="//@navigationRule.11/@fromViewId|" outlinks="pf142953142654525" path="/qq/selectQuizzActivity.xhtml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" comment="puzzle" id="pf14211429627510" configfile="/muses-security-quizz-puzzle/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" x="540" y="-12" id="pf14295314265420" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14295314265441" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/main.xhtml" x="156" y="-12" id="pf14295314265442" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf14295314265441 pf14295314265443" path="/pages/main.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_three.xhtml" x="127" y="111" id="pf14295314265444" referenceLink="//@navigationRule.14/@fromViewId|" outlinks="pf14295314265445 pf14295314265443 pf143213203738115 pf14328172370070" inlinks="pf14295314265446" path="/qq/step_three.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_four.xhtml" x="348" y="84" id="pf14295314265447" referenceLink="//@navigationRule.15/@fromViewId|" outlinks="pf14295314265448 pf143213203738116 pf14328172370071" inlinks="pf14295314265445" path="/qq/step_four.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_five.xhtml" x="564" y="120" id="pf14295314265449" referenceLink="//@navigationRule.16/@fromViewId|" outlinks="pf142953142654410 pf143213203738117 pf14328172370072" inlinks="pf14295314265448" path="/qq/step_five.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_six.xhtml" x="594" y="324" id="pf142953142654511" referenceLink="//@navigationRule.17/@fromViewId|" outlinks="pf142953142654512 pf143213203738118 pf14328172370073" inlinks="pf142953142654410" path="/qq/step_six.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_seven.xhtml" x="612" y="516" id="pf142953142654513" referenceLink="//@navigationRule.18/@fromViewId|" outlinks="pf142953142654514 pf143213203738119 pf14328172370074" inlinks="pf142953142654512" path="/qq/step_seven.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_height.xhtml" x="576" y="648" id="pf142953142654515" referenceLink="//@navigationRule.19/@fromViewId|" outlinks="pf142953142654516 pf143213203738120 pf14328172370075" inlinks="pf142953142654514" path="/qq/step_height.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_nine.xhtml" x="408" y="684" id="pf142953142654517" referenceLink="//@navigationRule.20/@fromViewId|" outlinks="pf142953142654518 pf143213203738121 pf14328172370076" inlinks="pf142953142654516" path="/qq/step_nine.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_ten.xhtml" x="132" y="660" id="pf142953142654519" referenceLink="//@navigationRule.21/@fromViewId|" outlinks="pf142953142654520 pf143213203738122" inlinks="pf142953142654518" path="/qq/step_ten.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/qqResult.xhtml" x="324" y="432" id="pf142953142654521" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" inlinks="pf142953142654520 pf14328172370076 pf14328172370075 pf14328172370074 pf14328172370073 pf14328172370072 pf14328172370071 pf14328172370070 pf14328172370087 pf14328172370088" path="/qq/qqResult.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_two.xhtml" x="84" y="225" id="pf142953142654522" referenceLink="//@navigationRule.12/@fromViewId|" outlinks="pf14295314265446 pf143213203738123 pf14328172370087" inlinks="pf142953142654523" path="/qq/step_two.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_one.xhtml" x="24" y="444" id="pf142953142654524" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf142953142654523 pf143213203738124 pf14328172370088" inlinks="pf142953142654525" path="/qq/step_one.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/selectQuizzActivity.xhtml" x="-27" y="-12" id="pf142953142654526" referenceLink="//@navigationRule.11/@fromViewId|" outlinks="pf142953142654525" path="/qq/selectQuizzActivity.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/qqPuzzle.xhtml" x="336" y="288" id="pf143213203738125" referenceLink="//@navigationRule.21/@navigationCase.0/@toViewId|" inlinks="pf143213203738123 pf143213203738124 pf143213203738115 pf143213203738116 pf143213203738117 pf143213203738118 pf143213203738119 pf143213203738120 pf143213203738121 pf143213203738122" path="/qq/qqPuzzle.xhtml"/>
   <links id="pf14295314265441" target="pf14295314265442" source="pf14295314265420" outcome="outcome" redirect="true"/>
   <links id="pf14295314265445" target="pf14295314265447" source="pf14295314265444" outcome="step4" redirect="true"/>
   <links id="pf14295314265443" target="pf14295314265442" source="pf14295314265444" outcome="test" redirect="true"/>
@@ -27,4 +28,23 @@
   <links id="pf14295314265446" target="pf14295314265444" source="pf142953142654522" outcome="step3" redirect="true"/>
   <links id="pf142953142654523" target="pf142953142654522" source="pf142953142654524" outcome="step2" redirect="true"/>
   <links id="pf142953142654525" target="pf142953142654524" source="pf142953142654526" outcome="step1" redirect="true"/>
+  <links id="pf143213203738123" target="pf143213203738125" source="pf142953142654522" outcome="puzzle"/>
+  <links id="pf143213203738124" target="pf143213203738125" source="pf142953142654524" outcome="puzzle"/>
+  <links id="pf143213203738115" target="pf143213203738125" source="pf14295314265444" outcome="puzzle"/>
+  <links id="pf143213203738116" target="pf143213203738125" source="pf14295314265447" outcome="puzzle"/>
+  <links id="pf143213203738117" target="pf143213203738125" source="pf14295314265449" outcome="puzzle"/>
+  <links id="pf143213203738118" target="pf143213203738125" source="pf142953142654511" outcome="puzzle"/>
+  <links id="pf143213203738119" target="pf143213203738125" source="pf142953142654513" outcome="puzzle"/>
+  <links id="pf143213203738120" target="pf143213203738125" source="pf142953142654515" outcome="puzzle"/>
+  <links id="pf143213203738121" target="pf143213203738125" source="pf142953142654517" outcome="puzzle"/>
+  <links id="pf143213203738122" target="pf143213203738125" source="pf142953142654519" outcome="puzzle"/>
+  <links id="pf14328172370076" target="pf142953142654521" source="pf142953142654517" outcome="result"/>
+  <links id="pf14328172370075" target="pf142953142654521" source="pf142953142654515" outcome="result"/>
+  <links id="pf14328172370074" target="pf142953142654521" source="pf142953142654513" outcome="result"/>
+  <links id="pf14328172370073" target="pf142953142654521" source="pf142953142654511" outcome="result"/>
+  <links id="pf14328172370072" target="pf142953142654521" source="pf14295314265449" outcome="result"/>
+  <links id="pf14328172370071" target="pf142953142654521" source="pf14295314265447" outcome="result"/>
+  <links id="pf14328172370070" target="pf142953142654521" source="pf14295314265444" outcome="result"/>
+  <links id="pf14328172370087" target="pf142953142654521" source="pf142953142654522" outcome="result"/>
+  <links id="pf14328172370088" target="pf142953142654521" source="pf142953142654524" outcome="result"/>
 </pageflow:Pageflow>
